@@ -14,7 +14,7 @@
   </tr>
 
 <% @controlled_access_points.each do |controlled_access_point| %>
-  <tr>
+  <tr class="line<%= cycle("0", "1") -%>">
     <td>
       <%= link_to controlled_access_point.base_access_point, controlled_access_point %>
       <br />

@@ -15,7 +15,7 @@
   </tr>
 
 <% @names.each do |name| %>
-  <tr>
+  <tr class="line<%= cycle("0", "1") -%>">
     <td><%= name.type_of_name %></td>
     <td><%= link_to name.name_string, name %></td>
     <td><%= name.scope_of_usage %></td>
