@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name_id: 1
+  controlled_access_point_id: 1
+
+two:
+  name_id: 1
+  controlled_access_point_id: 1

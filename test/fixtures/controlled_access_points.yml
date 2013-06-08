@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  base_access_point: MyText
+  type_of_controlled_access_point: MyString
+  language_of_base_access_point: MyString
+  source_of_controlled_access_point: MyText
+
+two:
+  base_access_point: MyText
+  type_of_controlled_access_point: MyString
+  language_of_base_access_point: MyString
+  source_of_controlled_access_point: MyText

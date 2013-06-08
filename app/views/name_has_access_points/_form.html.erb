@@ -1,0 +1,25 @@
+<%= form_for(@name_has_access_point) do |f| %>
+  <% if @name_has_access_point.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@name_has_access_point.errors.count, "error") %> prohibited this name_has_access_point from being saved:</h2>
+
+      <ul>
+      <% @name_has_access_point.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name_id %><br />
+    <%= f.number_field :name_id %>
+  </div>
+  <div class="field">
+    <%= f.label :controlled_access_point_id %><br />
+    <%= f.number_field :controlled_access_point_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

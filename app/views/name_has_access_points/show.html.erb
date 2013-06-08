@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @name_has_access_point.name_id %>
+</p>
+
+<p>
+  <b>Controlled access point:</b>
+  <%= @name_has_access_point.controlled_access_point_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_name_has_access_point_path(@name_has_access_point) %> |
+<%= link_to 'Back', name_has_access_points_path %>

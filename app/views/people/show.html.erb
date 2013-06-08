@@ -1,0 +1,37 @@
+<div id="content_detail" id="ui-corner-all">
+<h1 class="title">Showing person</h1>
+<div id="content_list">
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @person.title %>
+</p>
+
+<p>
+  <b>Date of birth:</b>
+  <%= @person.date_of_birth %>
+</p>
+
+<p>
+  <b>Place of birth:</b>
+  <%= @person.place_of_birth %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <% @person.names.each do |name| %>
+    <%= link_to name.name_string, name %>
+  <% end %>
+</p>
+
+</div>
+</div>
+
+<div id="submenu" class="ui-corner-all">
+  <ul>
+    <li><%= link_to t('page.edit'), edit_person_path(@person) %></li>
+    <li><%= link_to t('page.back'), people_path %></li>
+  </ul>
+</div>

@@ -1,0 +1,74 @@
+<div id="content_detail" class="ui-corner-all">
+<h1 class="title">Showing name</h1>
+<div id="content_list">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Person:</b>
+  <% if @name.person %>
+    <%= link_to "#{@name.person.try(:title)} (id: #{@name.id})", @name.person %>
+  <% else %>
+    <%= link_to 'Add a person', people_path(:name_id => @name.id) %>
+  <% end %>
+</p>
+
+<p>
+  <b>Controlled Access Point:</b>
+  <% if @name.controlled_access_points.exists? %>
+    <% @name.controlled_access_points.each do |controlled_access_point| %>
+      <%= link_to controlled_access_point.base_access_point, controlled_access_point %>
+    <% end %>
+  <% else %>
+    <%= link_to 'Add a controlled access point', controlled_access_points_path(:name_id => @name.id) %>
+  <% end %>
+</p>
+
+<p>
+  <b>Type of name:</b>
+  <%= @name.type_of_name %>
+</p>
+
+<p>
+  <b>Name string:</b>
+  <%= @name.name_string %>
+</p>
+
+<p>
+  <b>Scope of usage:</b>
+  <%= @name.scope_of_usage %>
+</p>
+
+<p>
+  <b>Dates of usage:</b>
+  <%= @name.dates_of_usage %>
+</p>
+
+<p>
+  <b>Language of name:</b>
+  <%= @name.language_of_name %>
+</p>
+
+<p>
+  <b>Script of name:</b>
+  <%= @name.script_of_name %>
+</p>
+
+<p>
+  <b>Transliteration scheme of name:</b>
+  <%= @name.transliteration_scheme_of_name %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%= @name.note %>
+</p>
+
+</div>
+</div>
+
+<div id="submenu" class="ui-corner-all">
+  <ul>
+    <li><%= link_to t('page.edit'), edit_name_path(@name) %></li>
+    <li><%= link_to t('page.back'), names_path %></li>
+  </ul>
+</div>

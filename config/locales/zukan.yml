@@ -1,0 +1,21 @@
+en:
+  activerecord:
+    models:
+      controlled_access_point: 
+
+  page:
+    show: Show
+    edit: Edit
+    destroy: Destroy
+    back: Back
+
+ja:
+  activerecord:
+    models:
+      controlled_access_point: 
+        
+  page:
+    show: 表示
+    edit: 編集
+    destroy: 削除
+    back: 戻る

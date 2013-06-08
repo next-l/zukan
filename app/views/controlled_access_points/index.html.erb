@@ -1,0 +1,47 @@
+<div id="content_detail" class="ui-corner-all">
+<h1 class="title">Listing controlled_access_points</h1>
+<div id="content_list">
+
+<table>
+  <tr>
+    <th>Base access point</th>
+    <th>Type of controlled access point</th>
+    <th>Language of base access point</th>
+    <th>Source of controlled access point</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @controlled_access_points.each do |controlled_access_point| %>
+  <tr>
+    <td>
+      <%= link_to controlled_access_point.base_access_point, controlled_access_point %>
+      <br />
+      (<% controlled_access_point.names.each do |name| %>
+        <%= link_to name.name_string, name %>
+      <% end %>)
+    </td>
+    <td><%= controlled_access_point.type_of_controlled_access_point %></td>
+    <td><%= controlled_access_point.language_of_base_access_point %></td>
+    <td><%= controlled_access_point.source_of_controlled_access_point %></td>
+    <td>
+      <% if @name_id %>
+        <%= link_to 'Add this access point', edit_controlled_access_point_path(controlled_access_point, :name_id => @name_id) %>
+      <% end %>
+    </td>
+    <td><%= link_to t('page.edit'), edit_controlled_access_point_path(controlled_access_point) %></td>
+    <td><%= link_to t('page.destroy'), controlled_access_point, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+</div>
+</div>
+
+<div id="submenu" class="ui-corner-all">
+  <ul>
+    <li><%= link_to 'New Controlled access point', new_controlled_access_point_path(:name_id => @name_id) %></li>
+  </ul>
+</div>

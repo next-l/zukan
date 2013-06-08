@@ -1,0 +1,41 @@
+<div id="content_detail" class="ui-corner-all">
+<h1 class="title">Showing person</h1>
+<div id="content_list">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Base access point:</b>
+  <%= @controlled_access_point.base_access_point %>
+</p>
+
+<p>
+  <b>Type of controlled access point:</b>
+  <%= @controlled_access_point.type_of_controlled_access_point %>
+</p>
+
+<p>
+  <b>Language of base access point:</b>
+  <%= @controlled_access_point.language_of_base_access_point %>
+</p>
+
+<p>
+  <b>Source of controlled access point:</b>
+  <%= @controlled_access_point.source_of_controlled_access_point %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <% @controlled_access_point.names.each do |name| %>
+    <%= link_to name.name_string, name %>
+  <% end %>
+</p>
+
+</div>
+</div>
+
+<div id="submenu" class="ui-corner-all">
+  <ul>
+    <li><%= link_to t('page.edit'), edit_controlled_access_point_path(@controlled_access_point) %></li>
+    <li><%= link_to t('page.back'), controlled_access_points_path %></li>
+  </ul>
+</div>
