@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :person_has_names
+
+
   resources :name_has_access_points
 
 
@@ -7,4 +10,6 @@ Rails.application.routes.draw do
 
   resources :people
   resources :names
+
+  root :to => "people#index"
 end

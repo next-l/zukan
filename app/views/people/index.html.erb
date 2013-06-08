@@ -35,6 +35,6 @@
 
 <div id="submenu" class="ui-corner-all">
   <ul>
-    <li><%= link_to 'New Person', new_person_path %></li>
+    <li><%= link_to 'New Person', new_person_path(:name_id => params[:name_id]) %></li>
   </ul>
 </div>
