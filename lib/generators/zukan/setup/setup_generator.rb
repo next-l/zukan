@@ -16,6 +16,10 @@ use Rack::Protection, :except => [:escaped_params, :json_csrf, :http_origin, :se
 EOS
     end
     generate("sunspot_rails:install")
+    generate("devise:install")
+    generate("devise", "User")
+    rake("zukan_engine:install:migrations")
+    gsub_file 'config/routes.rb', /devise_for :users$/, "devise_for :users, :path => 'accounts'"
     remove_file "public/index.html"
     remove_file "app/views/layouts/application.html.erb"
   end
