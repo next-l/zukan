@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :add_type_of_name_id_to_names
+
+
+  resources :type_of_names
+
+
   resources :person_has_names
 
 
